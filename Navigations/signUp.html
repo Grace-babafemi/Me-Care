@@ -83,10 +83,26 @@
     const Password = document.getElementById("signUpPassword").value;
     const confirmPassword = document.getElementById("signUpConfirmPassword").value;
 
-    localStorage.setItem("fullname", fullName);
-    localStorage.setItem("email", Email);
-    localStorage.setItem("password", Password);
-    localStorage.setItem("confirmPassword", confirmPassword);
+    // localStorage.setItem({
+    //     fullName : "fullname",
+    //     Email : "email",
+    //     Password : "password",
+    // })
+    // // localStorage.setItem("fullname", fullName);
+    // // localStorage.setItem("email", Email);
+    // // localStorage.setItem("password", Password);
+
+    if (localStorage.getItem("user")) {
+        let user_list = JSON.parse(localStorage.getItem("user"))
+    } else {
+        let user_list = [];
+        localStorage.setItem("user", JSON.stringify(user_list))
+    }
+
+    const userId = {fullName, Email, Password} 
+    user_list.push(userId)
+
+    localStorage.setItem("user", JSON.stringify(user_list))
 
     alert("Login successfully; Redirecting to login page...");
     window.location.href = "login.html";
