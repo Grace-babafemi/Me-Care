@@ -1,5 +1,6 @@
 
-document.querySelector("#loginContainer").addEventListener("submit", (event) => {
+ const login = document.querySelector("#loginContainer")
+ login.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const user = document.getElementById("userName").value;
