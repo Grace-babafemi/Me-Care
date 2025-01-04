@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="generalContainer" >
+      <div class="overLay"></div>
+      <div class="imgContainer">
+        <img src="./myProjectAsset/ProjectLogo.png" alt="" class="logo" />
+        <h1>Login To Your Account</h1>
+        <img src="./myProjectAsset/header-img (1).png" alt="" />
+      </div>
+      <div class="textContainer">
+        <div class="generalContainers">
+          <div class="titles">
+            <img src="./myProjectAsset/ProjectLogo.png" alt="" />
+            <h1>Welcome back</h1>
+            <p>
+              Glad to see you <br />
+              Login to your account below
+            </p>
+          </div>
+          <div class="content" id="loginContainer">
+            <form action="#">
+              <div class="formGroup">
+                <label for="email">Email</label>
+                <input type="email" required id="userName"/>
+              </div>
+
+              <div class="formGroup">
+                <label for="password">Password</label>
+                <input type="password" required  id="userPassword"/>
+              </div>
+              <button type="submit"><a href="#">Login</a></button>
+            </form>
+          </div>
+        </div>
+        <p class="account">
+          Don’t have an account?<span> <a href="signUp.html">Sign Up</a></span>
+        </p>
+      </div>
+    </div>
+
+
+    <script src="login.js"></script>
+  </body>
+</html>

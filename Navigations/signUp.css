@@ -1,0 +1,263 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #d9d9d9;
+    --gray-dark: #343a40;
+    --primary: #1937ae;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #818a93;
+
+}
+
+
+
+a{
+    text-decoration: none;
+    color: var(--light);
+}
+
+
+
+  .mainContainers{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+
+.leftImageContainer{
+    height: 450px;
+    width: 100%;
+    background:linear-gradient(#08C6EA,#1937ae);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    color: var(--white);
+    border-radius:10px 0  0 10px ;
+
+}
+
+
+
+.rightTextContainer{
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    background: var(--white);
+    border-radius: 0 10px 10px 0 ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+
+
+.leftImageContainer .createAccountContainer .textPage .image{
+    height: 30px;
+    margin-left:100px;
+}
+
+
+
+.leftImageContainer .createAccountContainer .textPage img{
+    height: 350px;
+}
+
+
+
+.upContainer{
+    height: 20%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+
+
+
+.middleContainer{
+    height: 55%;
+    width: 90%;
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+
+.middleContainer input{
+    padding:10px 30px;
+    outline: none;
+}
+
+
+
+.downContainer{
+    height: 20%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+.downContainer button{
+    padding:12px 80px;
+    background:linear-gradient(#08C6EA,#1937ae);
+     border: none;
+     border-radius: 10px;
+     font-size: 20px;
+}
+
+
+
+.upContainer img{
+    height: 30px;
+    width: 140px;
+}
+
+
+
+.upContainer h1{
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--primary);
+}
+
+
+
+.upContainer p{
+    font-size: 16px;
+    margin-bottom: 250px;
+}
+
+
+
+.downContainer p{
+    font-size: 18px;
+    margin-left: 150px;
+    color:var(--gray-dark);
+    margin-bottom: 30px;
+}
+
+
+
+.downContainer p a{
+    color: var(--primary);
+}
+
+
+
+
+.overLay{
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 428px) {
+    .mainContainers{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    
+    .mainContainers .rightTextContainer{
+        height: 90%;
+    }
+
+
+
+    .mainContainers .rightTextContainer .downContainer button{
+        width: 30%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px;
+    }
+
+
+
+    .mainContainers .rightTextContainer .downContainer p{
+        width: 100%;
+        margin-left: 50px;
+        margin-top: 6px;
+    }
+
+
+
+    .mainContainers .rightTextContainer .upContainer p{
+display: none;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .mainContainers{
+        height: 90vh;
+        background-image: url(./myProjectAsset/header-img\ \(1\).png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+
+
+    .mainContainers .leftImageContainer{
+        display: none;
+    }
+
+
+
+    
+    .overLay{
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        display: flex;
+      
+    }
+
+
+
+    .mainContainers .rightTextContainer{
+        height: 70%;
+    }
+}

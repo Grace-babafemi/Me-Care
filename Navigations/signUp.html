@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="signUp.css" />
+  </head>
+  <body>
+    <div class="mainContainers">
+      <div class="leftImageContainer">
+        <div class="createAccountContainer">
+          <div class="textPage">
+            <img src="./myProjectAsset/ProjectLogo.png" alt="" class="image" />
+            <h1>Create An Account With Us</h1>
+            <img src="./myProjectAsset/header-img (1).png" alt="" />
+          </div>
+        </div>
+      </div>
+      <form class="rightTextContainer" id="signUpForm">
+        <div class="overlay"></div>
+
+        <div class="upContainer">
+          <img src="./myProjectAsset/ProjectLogo.png" alt="" />
+          <h1>Sign Up</h1>
+        </div>
+        <div class="middleContainer">
+          <input
+            type="text"
+            placeholder="Fullname"
+            id="signUpFullName"
+            required
+          />
+          <input type="email" placeholder="Email" id="signUpEmail" required />
+          <input
+            type="password"
+            placeholder="Password"
+            id="signUpPassword"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Confirm password"
+            id="signUpConfirmPassword"
+            required
+          />
+        </div>
+        <div class="downContainer">
+          <button><a href="#">Cancel</a></button>
+          <button><a href="#">Sign Up</a></button>
+
+          <p>Already have an account ? <a href="login.html">Login</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+    //   document
+    //     .querySelector("#signUpForm")
+    //     .addEventListener("submit", (event) => {
+    //       event.preventDefault();
+    //       const FullName = document.getElementById("signUpFullName").value;
+    //       const Email = document.getElementById("signUpEmail").value;
+    //       const Password = document.getElementById("signUpPassword").value;
+    //       const confirmPassword = document.getElementById(
+    //         "signUpConfirmPassword"
+    //       ).value;
+
+    //       localStorage.setItem("Fullname", FullName);
+    //       localStorage.setItem("Email", Email);
+    //       localStorage.setItem("Password", Password);
+    //       localStorage.setItem("confirmPassword", confirmPassword);
+
+
+    //       alert("Login successfully;Redirecting to home page...");
+    //        window.location.href = "login.html";
+    //     });
+        
+   const signUp = document.querySelector("#signUpForm");
+  signUp.addEventListener("submit", (event) => {
+    const fullName = document.getElementById("signUpFullName").value;
+    const Email = document.getElementById("signUpEmail").value;
+    const Password = document.getElementById("signUpPassword").value;
+    const confirmPassword = document.getElementById("signUpConfirmPassword").value;
+
+    localStorage.setItem("fullname", fullName);
+    localStorage.setItem("email", Email);
+    localStorage.setItem("password", Password);
+    localStorage.setItem("confirmPassword", confirmPassword);
+
+    alert("Login successfully; Redirecting to login page...");
+    window.location.href = "login.html";
+  });
+
+    </script>
+  </body>
+</html>

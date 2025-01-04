@@ -1,0 +1,310 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #d9d9d9;
+    --gray-dark: #343a40;
+    --primary: #1937ae;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #818a93;
+  }
+
+
+
+  a {
+    text-decoration: none;
+    color: var(--black);
+  }
+
+
+
+
+.generalContainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 16px;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+
+
+.generalContainers{
+    margin: 0 auto;
+    padding: 15px 16px;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+
+
+.imgContainer{
+    height: 510px;
+    width: 50%;
+    background:linear-gradient(#08C6EA,#1937ae);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 0;
+    border-radius:10px 0  0 10px ;
+}
+
+
+
+.textContainer{
+    height: 560px;
+    width: 50%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0 10px 10px 0  ;
+
+}
+
+
+
+.generalContainer .imgContainer .logo{
+    height: 30px;
+}
+
+
+
+.generalContainer .imgContainer  img{
+    height: 70%;
+}
+
+
+
+.generalContainer .imgContainer h1{
+    width: 35%;
+    text-align: center;
+    color: var(--white);
+    font-weight: 800;
+
+}
+
+
+
+.textContainer .titles {
+    height: 45%;
+   
+}
+
+
+
+.textContainer .titles img{
+    height: 30px;
+    margin-left: 80px;
+    /* width: 130px; */
+}
+
+
+
+.textContainer .titles h1{
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--dark);
+}
+
+
+
+.textContainer .titles p{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gray-dark);
+    text-align: center;
+}
+
+
+.textContainer .content{
+    display: flex;
+    /* gap: 36px; */
+    flex-wrap: wrap;
+    margin-top:20px;
+    
+}
+
+
+
+.textContainer .content form .formGroup{
+    width: 100%;
+    height: 70%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center;
+    flex-direction: column; */
+}
+
+
+
+.textContainer .content form .form-group  label{
+    display: inline-block;
+    font-size: 20px;
+} 
+
+
+ .textContainer .content form  button{
+    height: 25%;
+    width: 100%;
+    /* padding: 10px 30px; */
+    border-radius: 6px;
+    background: linear-gradient(#007bff, #08C6EA);
+    font-weight: 500;
+    color: var(--light);
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    
+}
+
+
+.textContainer .content form button:hover{
+    color: var(--primary-shade);
+    background-color: var(--light);
+    border: 1px solid var(--primary-shade);
+}
+
+
+
+ .textContainer .content form .formGroup input,
+.textContainer .content form .formGroup textarea{
+    width: 100%;
+    padding:15px 40px;
+    border-radius: 6px;
+    border: 1px solid var(--gray);
+    outline: none;
+    transition: all .3s ease;
+}
+
+
+
+.textContainer .content form .form-group input:focus,
+.textContainer .content form .form-group textarea:focus{
+    outline: 1px solid var(--primary-shade);
+} 
+
+
+
+.textContainer .generalContainers{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+
+
+.account{
+    margin-left: 190px;
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+
+
+.account span{
+    color: var(--primary);
+}
+
+
+
+.overLay{
+    display: none;
+}
+
+
+
+@media screen and (max-width:428px) {
+    .generalContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .generalContainer .textContainer{
+        background: green;
+    }
+
+
+
+    .generalContainer .textContainer .generalContainer .titles p{
+        color: var(--white);
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .generalContainer{
+        height: 90vh;
+        background-image: url(./myProjectAsset/header-img\ \(1\).png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+
+
+    .generalContainer .imgContainer{
+        display: none;
+    }
+
+
+
+    .generalContainer .textContainer {
+        width: 100%;
+        background:none;
+        z-index: 100;
+
+    }
+
+
+
+     .generalContainer .textContainer .generalContainer .titles{
+        z-index: 100;
+    }
+
+
+
+    .overLay{
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        display: flex;
+      
+    }
+}
