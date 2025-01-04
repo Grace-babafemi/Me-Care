@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <div class="generalContainer" >
+    <div class="generalContainer">
       <div class="overLay"></div>
       <div class="imgContainer">
         <img src="./myProjectAsset/ProjectLogo.png" alt="" class="logo" />
@@ -24,16 +24,16 @@
               Login to your account below
             </p>
           </div>
-          <div class="content" >
+          <div class="content">
             <form action="#" onsubmit="loginForm(event)">
               <div class="formGroup">
                 <label for="email">Email</label>
-                <input type="email" required id="userName"/>
+                <input type="email" required id="userName" />
               </div>
 
               <div class="formGroup">
                 <label for="password">Password</label>
-                <input type="password" required  id="userPassword"/>
+                <input type="password" required id="userPassword" />
               </div>
               <button type="submit"><a href="#">Login</a></button>
             </form>
@@ -45,30 +45,26 @@
       </div>
     </div>
 
-
     <script>
       const loginForm = (event) => {
         const loginEmail = document.getElementById("userName").value;
         const loginPassword = document.getElementById("userPassword").value;
-        
+
         const userList = JSON.parse(localStorage.getItem("user"));
-        
+
         // console.log(userList)
-        
+
         const user = userList.find(
           (user) => user.Email === loginEmail && user.Password === loginPassword
-        )
+        );
         if (user) {
-          alert("Login successful; Redirecting to Dashboard page...").then(() => {
+          alert("Login successful; Redirecting to Dashboard page...");
 
-            window.location.href = "./dashBoard.html";
-          })
-          
-
+          window.location.href = "./dashBoard.html";
         } else {
-          alert("Incorrect details")
+          alert("Incorrect details");
         }
-      }
+      };
     </script>
   </body>
 </html>
