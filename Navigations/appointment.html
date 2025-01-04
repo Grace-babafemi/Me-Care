@@ -18,33 +18,69 @@
         <img src="./myProjectAsset/ProjectLogo.png" alt="" />
 
         </a>
-        <div class="inputContainer">
+        <form class="inputContainer"  onsubmit="bookingForm(event)">
           <div class="shortInput">
-            <input type="text" placeholder="Fullname" required class="fifty" />
-            <input type="text" placeholder="Department" required  class="fifty" />
+            <input type="text" placeholder="Fullname" required class="fifty"  id="fullName"/>
+            <input type="text" placeholder="Department" required  class="fifty"  id="department"/>
           </div>
           <div class="notEqual">
-            <input type="text" placeholder="Email" required class="long" />
-            <input type="text" placeholder="Age"  requiredclass="normal" />
+            <input type="text" placeholder="Email" required class="long" id="email"/>
+            <input type="text" placeholder="Age"  required class="normal"  id="age"/>
   
           </div>
           <div class="shortInput">
-            <input type="text" placeholder="Date" required class="fifty" />
-            <input type="text" placeholder="Time" required class="fifty" />
+            <input type="date" placeholder="Date" required class="fifty" id="date"/>
+            <input type="time" placeholder="Time" required class="fifty"  id="time"/>
           </div>
           <div class="notEqual">
-            <input type="text" placeholder="Address" required class="long" />
-            <input type="text" placeholder="Gender" required class="normal" />
+            <input type="text" placeholder="Address" required class="long"  id="Address"/>
+            <input type="text" placeholder="Gender" required class="normal"  id="gender"/>
   
           </div>
           <div class="shortInput">
-                      <input type="text" placeholder="Doctor's Name" required class="fifty" />
-          <input type="text" placeholder="Diease/Sypmtoms" required class="fifty" />
+                      <input type="text" placeholder="Doctor's Name" required class="fifty"  id="dctName"/>
+          <input type="text" placeholder="Diease/Sypmtoms" required class="fifty"  id="Diease"/>
 
           </div>
-        </div>
+        </form>
         <button><a href="#">Submit Now</a></button>
       </div>
     </div>
+
+
+
+    <script>
+const bookingForm = (event) => {
+  event.preventDefault();
+
+  const clientName = document.getElementById("fullName").value;
+  const department = document.getElementById("department").value;
+  const clientEmail = document.getElementById("email").value;
+  const clientAge = document.getElementById("age").value;
+  const clientDate = document.getElementById("date").value;
+  const clientTime = document.getElementById("Time").value;
+  const clientAddress = document.getElementById("Address").value;
+  const clientGender = document.getElementById("gender").value;
+  const clientDoctorName = document.getElementById("dctName").value;
+  const clientDieases = document.getElementById("Diease").value;
+
+  if (localStorage.getItem("users")) {
+          var userRequest = JSON.parse(localStorage.getItem("users"));
+        } else {
+          var userRequest = [];
+          localStorage.setItem("users", JSON.stringify(userRequest));
+        }
+
+        const userIds = { clientName, department, clientEmail, clientAge, clientDate, clientTime, clientAddress, clientGender, clientDoctorName, clientDieases };
+        userRequest.push(userIds);
+        console.log(userIds);
+
+        localStorage.setItem("users", JSON.stringify(userRequest));
+
+        alert("Appointment booked successfully; Redirecting to Dashboard page...");
+        window.location.href = "dashBoard.html";
+      
+};
+    </script>
   </body>
 </html>

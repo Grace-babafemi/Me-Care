@@ -25,7 +25,7 @@
             </p>
           </div>
           <div class="content" >
-            <form action="#" id="loginContainer">
+            <form action="#" onsubmit="loginForm(event)">
               <div class="formGroup">
                 <label for="email">Email</label>
                 <input type="email" required id="userName"/>
@@ -40,12 +40,35 @@
           </div>
         </div>
         <p class="account">
-          Don’t have an account?<span> <a href="signUp.html">Sign Up</a></span>
+          Don't have an account?<span> <a href="signUp.html">Sign Up</a></span>
         </p>
       </div>
     </div>
 
 
-    <script src="login.js"></script>
+    <script>
+      const loginForm = (event) => {
+        const loginEmail = document.getElementById("userName").value;
+        const loginPassword = document.getElementById("userPassword").value;
+        
+        const userList = JSON.parse(localStorage.getItem("user"));
+        
+        // console.log(userList)
+        
+        const user = userList.find(
+          (user) => user.Email === loginEmail && user.Password === loginPassword
+        )
+        if (user) {
+          alert("Login successful; Redirecting to Dashboard page...").then(() => {
+
+            window.location.href = "dashBoard.html";
+          })
+          
+
+        } else {
+          alert("Incorrect details")
+        }
+      }
+    </script>
   </body>
 </html>

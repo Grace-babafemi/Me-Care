@@ -17,7 +17,10 @@
           </div>
         </div>
       </div>
-      <form class="rightTextContainer" id="signUpForm">
+      <form
+        class="rightTextContainer"
+        onsubmit="signUpForm(event)"
+      >
         <div class="overlay"></div>
 
         <div class="upContainer">
@@ -55,59 +58,32 @@
     </div>
 
     <script>
-    //   document
-    //     .querySelector("#signUpForm")
-    //     .addEventListener("submit", (event) => {
-    //       event.preventDefault();
-    //       const FullName = document.getElementById("signUpFullName").value;
-    //       const Email = document.getElementById("signUpEmail").value;
-    //       const Password = document.getElementById("signUpPassword").value;
-    //       const confirmPassword = document.getElementById(
-    //         "signUpConfirmPassword"
-    //       ).value;
+      const signUpForm = (event) => {
+        event.preventDefault();
 
-    //       localStorage.setItem("Fullname", FullName);
-    //       localStorage.setItem("Email", Email);
-    //       localStorage.setItem("Password", Password);
-    //       localStorage.setItem("confirmPassword", confirmPassword);
+        const FullName = document.getElementById("signUpFullName").value;
+        const Email = document.getElementById("signUpEmail").value;
+        const Password = document.getElementById("signUpPassword").value;
+        const confirmPassword = document.getElementById(
+          "signUpConfirmPassword"
+        ).value;
 
+        if (localStorage.getItem("user")) {
+          var user_list = JSON.parse(localStorage.getItem("user"));
+        } else {
+          var user_list = [];
+          localStorage.setItem("user", JSON.stringify(user_list));
+        }
 
-    //       alert("Login successfully;Redirecting to home page...");
-    //        window.location.href = "login.html";
-    //     });
-        
-   const signUp = document.querySelector("#signUpForm");
-  signUp.addEventListener("submit", (event) => {
-    const fullName = document.getElementById("signUpFullName").value;
-    const Email = document.getElementById("signUpEmail").value;
-    const Password = document.getElementById("signUpPassword").value;
-    const confirmPassword = document.getElementById("signUpConfirmPassword").value;
+        const userId = { FullName, Email, Password };
+        user_list.push(userId);
+        console.log(userId);
 
-    // localStorage.setItem({
-    //     fullName : "fullname",
-    //     Email : "email",
-    //     Password : "password",
-    // })
-    // // localStorage.setItem("fullname", fullName);
-    // // localStorage.setItem("email", Email);
-    // // localStorage.setItem("password", Password);
+        localStorage.setItem("user", JSON.stringify(user_list));
 
-    if (localStorage.getItem("user")) {
-        let user_list = JSON.parse(localStorage.getItem("user"))
-    } else {
-        let user_list = [];
-        localStorage.setItem("user", JSON.stringify(user_list))
-    }
-
-    const userId = {fullName, Email, Password, confirmPassword} 
-    user_list.push(userId)
-
-    localStorage.setItem("user", JSON.stringify(user_list))
-
-    alert("Login successfully; Redirecting to login page...");
-    window.location.href = "login.html";
-  });
-
+        alert("sign successfully; Redirecting to login page...");
+        window.location.href = "login.html";
+      };
     </script>
   </body>
 </html>
