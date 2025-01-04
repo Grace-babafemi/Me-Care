@@ -7,7 +7,7 @@ document.querySelector("#loginContainer").addEventListener("submit", (event) => 
 
 
 
-    const storeUser = localStorage.getItem("userName");
+    const storeUser = localStorage.getItem("fullName");
     const storePasswords = localStorage.getItem("Password");
 
 
