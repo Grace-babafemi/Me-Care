@@ -57,14 +57,17 @@
         const user = userList.find(
           (user) => user.Email === loginEmail && user.Password === loginPassword
         );
+
+
         if (user) {
           alert("Login successful; Redirecting to Dashboard page...");
-
           window.location.href = "./dashBoard.html";
+
         } else {
           alert("Incorrect details");
         }
       };
+
     </script>
   </body>
 </html>
