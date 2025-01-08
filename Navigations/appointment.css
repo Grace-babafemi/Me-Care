@@ -1,173 +1,164 @@
 :root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #d9d9d9;
-    --gray-dark: #343a40;
-    --primary: #1937ae;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #818a93;
-
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #d9d9d9;
+  --gray-dark: #343a40;
+  --primary: #1937ae;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #818a93;
 }
 
-a{
-    text-decoration: none;
-    color: var(--light);
-    font-size: 18px;
+a {
+  text-decoration: none;
+  color: var(--light);
+  font-size: 18px;
 }
 
-
-
-
-.container{
-    height: 90vh;
-    width: 97%;
-    padding: 20px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  height: 90vh;
+  width: 97%;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-.imageContainer{
-    height: 100%;
-    width: 50%;
-    background:linear-gradient(#08C6EA,#1937ae);
-    padding:30px 0;
-    display: flex;
-    flex-direction: column;
-    /* gap:10px; */
-    align-items: center;
-    border-radius:10px 0  0 10px ;  
+.imageContainer {
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(#08c6ea, #1937ae);
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  /* gap:10px; */
+  align-items: center;
+  border-radius: 10px 0 0 10px;
 }
 
-
-.bookingContainer{
-    height: 100%;
-    padding:30px;
-    width: 50%;
-    background: var(--light);
-    border-radius: 0 10px 10px 0 ;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.bookingContainer {
+  height: 100%;
+  padding: 30px;
+  width: 50%;
+  background: var(--light);
+  border-radius: 0 10px 10px 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
-
-.imageContainer .mainLogo{
-    height: 30px;
-    width: 80px;
+.imageContainer .mainLogo {
+  height: 30px;
+  width: 80px;
 }
 
-
-
-.imageContainer img{
-    height: 400px;
-    width: 500px;
+.imageContainer img {
+  height: 400px;
+  width: 500px;
 }
 
-
-
-.imageContainer h1{
-    font-size: 40px;
-    color: var(--white);
-    width:50%;
-    text-align: center;
+.imageContainer h1 {
+  font-size: 40px;
+  color: var(--white);
+  width: 50%;
+  text-align: center;
 }
 
-
-
-.bookingContainer img{
-    height: 30px;
+.bookingContainer img {
+  height: 30px;
 }
 
-
-
-.bookingContainer .inputContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 55px;
+.bookingContainer .inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 55px;
 }
 
-
-
-.bookingContainer .inputContainer input{
-    padding: 8px 30px;
+.bookingContainer .inputContainer input {
+  padding: 8px 30px;
 }
 
-
-
-.bookingContainer button{
-    padding: 10px 120px;
-    margin-top: 30px;
-    background: linear-gradient(#08C6EA,#1937ae);
-    color: var(--light);
-    border: none;
-    border-radius: 20px;
-    /* margin-left: 150px; */
+.bookingContainer button {
+  padding: 10px 120px;
+  margin-top: 30px;
+  background: linear-gradient(#08c6ea, #1937ae);
+  color: var(--light);
+  border: none;
+  border-radius: 20px;
+  /* margin-left: 150px; */
 }
 
-
-
-.bookingContainer .inputContainer .shortInput .fifty{
-    height: 100%;
-    width: 40%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--primary);
+.bookingContainer .inputContainer .shortInput .fifty {
+  height: 100%;
+  width: 40%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
 }
 
-
-
-.bookingContainer .inputContainer .shortInput{
-    display: flex;
-    gap: 20px;
+.bookingContainer .inputContainer .shortInput {
+  display: flex;
+  gap: 20px;
 }
 
-
-
-
-
-.bookingContainer .inputContainer .notEqual .long{
-    height: 100%;
-    width: 60%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--primary);
+.bookingContainer .inputContainer .notEqual .long {
+  height: 100%;
+  width: 60%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
 }
 
-
-
-.bookingContainer .inputContainer .notEqual .normal{
-    height: 100%;
-    width: 30%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--primary);
+.bookingContainer .inputContainer .notEqual .normal {
+  height: 100%;
+  width: 30%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
 }
 
+.bookingContainer .inputContainer .notEqual .time {
+  height: 50px;
+  /* padding: 30px; */
+  width: 30%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+}
+.bookingContainer .inputContainer .notEqual .address {
+  height: 35px;
+  /* padding: 30px; */
+  width: 50%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+}
+.bookingContainer .inputContainer .notEqual .gender {
+  height: 40px;
+  /* padding: 30px; */
+  width: 40%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+}
 
-
-.bookingContainer .inputContainer .notEqual{
-    display: flex;
-    gap: 20px;
+.bookingContainer .inputContainer .notEqual {
+  display: flex;
+  gap: 20px;
 }

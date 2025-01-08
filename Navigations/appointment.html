@@ -15,72 +15,150 @@
       </div>
       <div class="bookingContainer">
         <a href="#">
-        <img src="./myProjectAsset/ProjectLogo.png" alt="" />
-
+          <img src="./myProjectAsset/ProjectLogo.png" alt="" />
         </a>
-        <form class="inputContainer"  onsubmit="bookingForm(event)">
-          <div class="shortInput">
-            <input type="text" placeholder="Fullname" required class="fifty"  id="fullName"/>
-            <input type="text" placeholder="Department" required  class="fifty"  id="department"/>
-          </div>
-          <div class="notEqual">
-            <input type="text" placeholder="Email" required class="long" id="email"/>
-            <input type="text" placeholder="Age"  required class="normal"  id="age"/>
-  
-          </div>
-          <div class="shortInput">
-            <input type="date" placeholder="Date" required class="fifty" id="date"/>
-            <input type="time" placeholder="Time" required class="fifty"  id="time"/>
-          </div>
-          <div class="notEqual">
-            <input type="text" placeholder="Address" required class="long"  id="Address"/>
-            <input type="text" placeholder="Gender" required class="normal"  id="gender"/>
-  
-          </div>
-          <div class="shortInput">
-                      <input type="text" placeholder="Doctor's Name" required class="fifty"  id="dctName"/>
-          <input type="text" placeholder="Diease/Sypmtoms" required class="fifty"  id="Diease"/>
 
+        <form class="inputContainer">
+          <div class="shortInput">
+            <input
+              type="text"
+              placeholder="Fullname"
+              required
+              class="fifty"
+              id="fullName"
+            />
+            <input
+              type="text"
+              placeholder="Department"
+              required
+              class="fifty"
+              id="department"
+            />
+          </div>
+          <div class="notEqual">
+            <input
+              type="text"
+              placeholder="Email"
+              required
+              class="long"
+              id="email"
+            />
+
+            <input
+              type="text"
+              placeholder="Age"
+              required
+              class="normal"
+              id="age"
+            />
+          </div>
+          <div class="shortInput">
+            <input
+              type="date"
+              placeholder="Date"
+              required
+              class="fifty"
+              id="date"
+            />
+            <input
+              type="time"
+              placeholder="Time"
+              required
+              class="time"
+              id="time"
+            />
+          </div>
+          <div class="notEqual">
+            <input
+              type="text"
+              placeholder="Address"
+              required
+              class="address"
+              id="Address"
+            />
+            <select
+              type="text"
+              placeholder="Gender"
+              required
+              class="gender"
+              id="gender"
+            >
+              <option value="">--Gender--</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="shortInput">
+            <select
+              type="text"
+              placeholder="Doctor's Name"
+              required
+              class="fifty"
+              id="dctName"
+            >
+              <option value="">--Doctors--</option>
+              <option value="samanta">Samanta Crane</option>
+              <option value="ostin">Ostin Green</option>
+              <option value="norman">Norman Collins</option>
+            </select>
+
+            <input
+              type="text"
+              placeholder="Disease/Symptoms"
+              required
+              class="fifty"
+              id="Disease"
+            />
           </div>
         </form>
-        <button><a href="#">Submit Now</a></button>
+        <button onclick="bookingForm()"><a href="#">Submit Now</a></button>
       </div>
     </div>
 
-
-
     <script>
-const bookingForm = (event) => {
-  event.preventDefault();
+      const bookingForm = () => {
+        const clientName = document.getElementById("fullName").value;
+        const department = document.getElementById("department").value;
+        const clientEmail = document.getElementById("email").value;
+        const clientAge = document.getElementById("age").value;
+        const clientDate = document.getElementById("date").value;
+        const clientTime = document.getElementById("time").value;
+        const clientAddress = document.getElementById("Address").value;
+        const clientGender = document.getElementById("gender").value;
+        const clientDoctorName = document.getElementById("dctName").value;
+        const clientDisease = document.getElementById("Disease").value;
 
-  const clientName = document.getElementById("fullName").value;
-  const department = document.getElementById("department").value;
-  const clientEmail = document.getElementById("email").value;
-  const clientAge = document.getElementById("age").value;
-  const clientDate = document.getElementById("date").value;
-  const clientTime = document.getElementById("Time").value;
-  const clientAddress = document.getElementById("Address").value;
-  const clientGender = document.getElementById("gender").value;
-  const clientDoctorName = document.getElementById("dctName").value;
-  const clientDieases = document.getElementById("Diease").value;
+        console.log(clientDisease);
 
-  if (localStorage.getItem("users")) {
-          var userRequest = JSON.parse(localStorage.getItem("users"));
+        if (localStorage.getItem("appointment")) {
+          var userRequest = JSON.parse(localStorage.getItem("appointment"));
         } else {
           var userRequest = [];
-          localStorage.setItem("users", JSON.stringify(userRequest));
+          localStorage.setItem("appointment", JSON.stringify(userRequest));
         }
 
-        const userIds = { clientName, department, clientEmail, clientAge, clientDate, clientTime, clientAddress, clientGender, clientDoctorName, clientDieases };
+        const userIds = {
+          clientName,
+          department,
+          clientEmail,
+          clientAge,
+          clientDate,
+          clientTime,
+          clientAddress,
+          clientGender,
+          clientDoctorName,
+          clientDisease,
+        };
         userRequest.push(userIds);
         console.log(userIds);
 
-        localStorage.setItem("users", JSON.stringify(userRequest));
+        localStorage.setItem("appointment", JSON.stringify(userRequest));
 
-        alert("Appointment booked successfully; Redirecting to Dashboard page...");
+        alert(
+          "Appointment booked successfully; Redirecting to Dashboard page..."
+        );
         window.location.href = "./dashBoard.html";
-      
-};
+      };
     </script>
   </body>
 </html>

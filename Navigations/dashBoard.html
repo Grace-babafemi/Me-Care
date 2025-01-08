@@ -56,11 +56,11 @@
           <h1>Appointment List</h1>
         </div>
         <div class="containerForIcon">
-          <i class='bx bxs-home'></i>
+          <i class="bx bxs-home"></i>
           <h1>Home</h1>
-          <i class='bx bx-chevron-right'></i>
+          <i class="bx bx-chevron-right"></i>
           <h1>Appointment</h1>
-          <i class='bx bx-chevron-right'></i>
+          <i class="bx bx-chevron-right"></i>
           <h1>Appointment List</h1>
         </div>
         <div class="infoContainer">
@@ -74,12 +74,22 @@
                 <td>Address</td>
                 <td>Gender</td>
                 <td>Consulting Doctor</td>
-                <td>Diease</td>
+                <td>Disease</td>
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
+            <tbody id="tableBody">
+              <!-- <tr>
+                <td>Jenishshah</td>
+                <td>45</td>
+                <td>jenish@gmail.com</td>
+                <td>12 Jan 2012</td>
+                <td>15</td>
+                <td>Female</td>
+                <td>Dr.Rajesh</td>
+                <td>Fever</td>
+              </tr> -->
+              <!-- <tr>
                 <td>Jenishshah</td>
                 <td>45</td>
                 <td>jenish@gmail.com</td>
@@ -128,26 +138,32 @@
                 <td>Female</td>
                 <td>Dr.Rajesh</td>
                 <td>Fever</td>
-              </tr>
-              <tr>
-                <td>Jenishshah</td>
-                <td>45</td>
-                <td>jenish@gmail.com</td>
-                <td>12 Jan 2012</td>
-                <td>15</td>
-                <td>Female</td>
-                <td>Dr.Rajesh</td>
-                <td>Fever</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
       </div>
     </aside>
 
-
     <script>
-      
+      const appointmentPage = JSON.parse(localStorage.getItem("appointment"));
+      const appointmentTable = document.getElementById("tableBody");
+      for (let index = 0; index < appointmentPage.length; index++) {
+        console.log(appointmentPage[index]);
+
+        appointmentTextPage = document.createElement("tr");
+        appointmentTextPage.innerHTML = `
+        <td>${appointmentPage[index].clientName}</td>
+        <td>${appointmentPage[index].clientAge}</td>
+        <td>${appointmentPage[index].clientEmail}</td>
+        <td>${appointmentPage[index].clientDate}</td>
+        <td>${appointmentPage[index].clientAddress}</td>
+        <td>${appointmentPage[index].clientGender}</td>
+        <td>${appointmentPage[index].department}</td>
+        <td>${appointmentPage[index].clientDisease}</td>
+        `;
+        appointmentTable.appendChild(appointmentTextPage)
+      }
     </script>
   </body>
 </html>

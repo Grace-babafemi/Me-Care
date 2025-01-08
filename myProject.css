@@ -113,7 +113,7 @@ header .headerContainer {
   padding: 10px 30px;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(#1c1da3, #08c6ea);
+  background: linear-gradient(to right, #1c1da3, #08c6ea);
   font-weight: 600;
 }
 
@@ -598,6 +598,12 @@ main .forText a {
 .ourTeam .headerContainer .content .img img {
   height: 100%;
   width: 200px;
+}
+
+
+
+.ourTeam .headerContainer .content .img{
+  color: var(--gray-dark);
 }
 
 .ourTeam .headerContainer .content .icons {
